@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon (click)="goBackPage()" class="back-icon" name="caret-back-outline"></ion-icon>
+    <ion-title id="toolbar-title">
+      Cadastrar
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscream="true">
+  <form [formGroup]="registerForm" (ngSubmit)="register()" novalidate>
+    <ion-item>
+      <ion-select label="Tipo Do Carro" placeholder="Selecione" formControlName="tipoc">
+        <ion-select-option value="0">Pista</ion-select-option>
+        <ion-select-option value="1">Semi-pista</ion-select-option>
+        <ion-select-option value="2">Off-Road</ion-select-option>
+        <ion-select-option value="3">Drift</ion-select-option>
+        <ion-select-option value="4">Arrancada</ion-select-option>
+        <ion-select-option value="5">Rua</ion-select-option>
+        <ion-select-option value="6">Passeio</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <span *ngIf="registerForm.get('tipocarro')?.touched && registerForm.get('tipocarro')?.errors?.['required']">O campo tipo do Carro é obrigatório</span>
+    <ion-item>
+      <ion-input label="Nome" type="string" formControlName="nome" placeholder="Insira o nome do veiculo"></ion-input>
+    </ion-item>
+    <span *ngIf="registerForm.get('nome')?.touched && registerForm.get('nome')?.errors?.['required']">O campo Nome é obrigatório</span>
+    <span *ngIf="registerForm.get('nome')?.dirty && registerForm.get('nome')?.errors?.['minlength']">O campo Nome é de no minimo 3 caracteres</span>
+    <ion-item>
+      <ion-input label="Ano" type="string" formControlName="ano" placeholder="Insira o Ano do veiculo"></ion-input>
+    </ion-item>
+    <span *ngIf="registerForm.get('ano')?.touched && registerForm.get('ano')?.errors?.['required']">O campo Ano é obrigatório</span>
+    <span *ngIf="registerForm.get('ano')?.dirty && registerForm.get('ano')?.errors?.['minlength']">O campo Ano é de no minimo 4 caracteres</span>
+    <ion-item>
+      <ion-input label="Montadora" type="string" formControlName="montadora" placeholder="Insira a montadora do veiculo"></ion-input>
+    </ion-item>
+    <span *ngIf="registerForm.get('montadora')?.touched && registerForm.get('montadora')?.errors?.['required']">O campo montadora é obrigatório</span>
+    <ion-item>
+      <ion-select label="Tração" placeholder="Selecione" formControlName="power">
+        <ion-select-option value="0">AWD</ion-select-option>
+        <ion-select-option value="1">FWD</ion-select-option>
+        <ion-select-option value="2">RWD</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <span *ngIf="registerForm.get('tracao')?.touched && registerForm.get('tracao')?.errors?.['required']">O campo tracao é obrigatório</span>
+    <ion-item>
+      <ion-button size="default" color="success" shape="round">
+        <input type="file" (change)="uploadFile($event)">
+      </ion-button>
+    </ion-item>
+    <span *ngIf="registerForm.get('imagem')?.touched && registerForm.get('imagem')?.errors?.['required']">O campo imagem é obrigatório</span>
+    <ion-button expand="full" type="submit">Cadastrar</ion-button>
+  </form>
+</ion-content>
+
+
+
+
+
+
