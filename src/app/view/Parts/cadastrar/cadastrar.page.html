@@ -22,21 +22,21 @@
     </ion-item>
     <span *ngIf="registerForm.get('tipocarro')?.touched && registerForm.get('tipocarro')?.errors?.['required']">O campo tipo do Carro é obrigatório</span>
     <ion-item>
-      <ion-input label="Nome" type="string" formControlName="nome" placeholder="Insira o nome do veiculo"></ion-input>
+      <ion-input label="nome" type="string" formControlName="nome" placeholder="Insira o nome do veiculo"></ion-input>
     </ion-item>
     <span *ngIf="registerForm.get('nome')?.touched && registerForm.get('nome')?.errors?.['required']">O campo Nome é obrigatório</span>
     <span *ngIf="registerForm.get('nome')?.dirty && registerForm.get('nome')?.errors?.['minlength']">O campo Nome é de no minimo 3 caracteres</span>
     <ion-item>
-      <ion-input label="Ano" type="string" formControlName="ano" placeholder="Insira o Ano do veiculo"></ion-input>
+      <ion-input label="ano" type="string" formControlName="ano" placeholder="Insira o Ano do veiculo"></ion-input>
     </ion-item>
     <span *ngIf="registerForm.get('ano')?.touched && registerForm.get('ano')?.errors?.['required']">O campo Ano é obrigatório</span>
     <span *ngIf="registerForm.get('ano')?.dirty && registerForm.get('ano')?.errors?.['minlength']">O campo Ano é de no minimo 4 caracteres</span>
     <ion-item>
-      <ion-input label="Montadora" type="string" formControlName="montadora" placeholder="Insira a montadora do veiculo"></ion-input>
+      <ion-input label="montadora" type="string" formControlName="montadora" placeholder="Insira a montadora do veiculo"></ion-input>
     </ion-item>
     <span *ngIf="registerForm.get('montadora')?.touched && registerForm.get('montadora')?.errors?.['required']">O campo montadora é obrigatório</span>
     <ion-item>
-      <ion-select label="Tração" placeholder="Selecione" formControlName="power">
+      <ion-select label="tracao" placeholder="Selecione" formControlName="power">
         <ion-select-option value="0">AWD</ion-select-option>
         <ion-select-option value="1">FWD</ion-select-option>
         <ion-select-option value="2">RWD</ion-select-option>
